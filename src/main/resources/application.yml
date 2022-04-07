@@ -29,9 +29,9 @@ management:
 
 spring:
   application:
-    name: @project.name@
+    name: '@project.name@'
 info:
-  version: @project.version@
+  version: '@project.version@'
 springfox:
   documentation:
     swagger:
