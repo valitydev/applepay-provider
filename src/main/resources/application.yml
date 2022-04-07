@@ -1,15 +1,37 @@
 server:
-  port: @server.port@
+  port: '@server.port@'
   rest:
-    port: @server.rest.port@
+    port: '@server.rest.port@'
     endpoint: api/v1
+
+management:
+  security:
+    flag: false
+  server:
+    port: '@management.port@'
+  metrics:
+    tags:
+      application: '@project.name@'
+    export:
+      prometheus:
+        enabled: true
+  endpoint:
+    health:
+      show-details: always
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+
 spring:
   application:
-    name: @project.name@
+    name: '@project.name@'
 info:
-  version: @project.version@
-  damsel:
-    version: @damsel.version@
+  version: '@project.version@'
 springfox:
   documentation:
     swagger:
